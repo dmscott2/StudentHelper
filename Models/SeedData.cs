@@ -12,10 +12,56 @@ namespace StudentHelper.Models
         {
             using (var db = new StudentHelperDbContext (serviceProvider.GetRequiredService<DbContextOptions<StudentHelperDbContext>>()))
             {
+                if (db.Courses.Any())
+
+                db.Courses.AddRange(
+                    new Course
+                    {
+                        CourseName = "Investments"
+                    },
+
+                        new Course
+                    {
+                        CourseName = "Strategic Management"
+                    },
+                        new Course
+                    {
+                        CourseName = "Advanced Programming"
+                    },
+                        new Course
+                    {
+                        CourseName = "History"
+                    },
+
+                        new Course
+                    {
+                        CourseName = "Math"
+                    },
+                        new Course
+                    {
+                        CourseName = "Science"
+                    },
+                        new Course
+                    {
+                        CourseName = "Accounting"
+                    },
+                        new Course
+                    {
+                        CourseName = "Programming"
+                    },
+                        new Course
+                    {
+                        CourseName = "Government"
+                    },
+                        new Course
+                    {
+                        CourseName = "Statistics"
+                    }
+
+                );
+                db.SaveChanges();
+        
                 if (db.Students.Any())
-                {
-                    return;
-                }
 
                 db.Students.AddRange(
                     new Student
@@ -129,7 +175,7 @@ namespace StudentHelper.Models
                     }
                 );
                 db.SaveChanges();
-            }
+                }
         }
     }
 }
