@@ -28,6 +28,7 @@ namespace StudentHelper
 
     services.AddDbContext<StudentHelperDbContext>(options =>
 	options.UseSqlite(Configuration.GetConnectionString("StudentHelperContext")));
+
 }
 
 
