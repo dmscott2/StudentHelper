@@ -23,8 +23,7 @@ namespace StudentHelper.Pages.Students
         public async Task OnGetAsync()
         {
             Student = await _context.Students
-                .Include(a => a.Course)
-                .Include(a => a.Assignment).ToListAsync();
+                .Include(a => a.Assignments).ToListAsync();
         }
     }
 }

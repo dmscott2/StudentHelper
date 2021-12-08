@@ -30,7 +30,7 @@ namespace StudentHelper.Pages.Students
             }
 
             Student = await _context.Students
-                .Include(a => a.Student).FirstOrDefaultAsync(m => m.StudentId == id);
+                .Include(a => a.StudentEmail).FirstOrDefaultAsync(m => m.StudentId == id);
 
             if (Student == null)
             {
