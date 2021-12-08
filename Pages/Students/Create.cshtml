@@ -14,24 +14,24 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="StudentFirstName" class="control-label"></label>
-                <input asp-for="StudentFirstName" class="form-control" />
-                <span asp-validation-for="StudentFirstName" class="text-danger"></span>
+                <label asp-for="Student.StudentFirstName" class="control-label"></label>
+                <input asp-for="Student.StudentFirstName" class="form-control" />
+                <span asp-validation-for="Student.StudentFirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StudentLastName" class="control-label"></label>
-                <input asp-for="StudentLastName" class="form-control" />
-                <span asp-validation-for="StudentLastName" class="text-danger"></span>
+                <label asp-for="Student.StudentLastName" class="control-label"></label>
+                <input asp-for="Student.StudentLastName" class="form-control" />
+                <span asp-validation-for="Student.StudentLastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StudentEmail" class="control-label"></label>
-                <input asp-for="StudentEmail" class="form-control" />
-                <span asp-validation-for="StudentEmail" class="text-danger"></span>
+                <label asp-for="Student.StudentEmail" class="control-label"></label>
+                <input asp-for="Student.StudentEmail" class="form-control" />
+                <span asp-validation-for="Student.StudentEmail" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RegistrationDate" class="control-label"></label>
-                <input asp-for="RegistrationDate" class="form-control"  />
-                <span asp-validation-for="RegistrationDate" class="text-danger"></span>
+                <label asp-for="Student.RegistrationDate" class="control-label"></label>
+                <input asp-for="Student.RegistrationDate" class="form-control"  />
+                <span asp-validation-for="Student.RegistrationDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
