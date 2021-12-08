@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.Sqlite;
 
-namespace StudentHelper
+namespace StudentHelper.Models
 {
     public class Startup
     {
