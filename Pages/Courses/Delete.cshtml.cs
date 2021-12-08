@@ -29,7 +29,7 @@ namespace StudentHelper.Pages.Courses
             }
 
             Course = await _context.Courses
-                .Include(a => a.CourseName).FirstOrDefaultAsync(m => m.CourseId == id);
+                .Include(a => a.CourseName).FirstOrDefaultAsync(m => m.CourseID == id);
 
             if (Course == null)
             {
@@ -49,7 +49,7 @@ namespace StudentHelper.Pages.Courses
 
             if (Course != null)
             {
-                _context.Assignments.Remove(Course);
+                _context.Courses.Remove(Course);
                 await _context.SaveChangesAsync();
             }
 

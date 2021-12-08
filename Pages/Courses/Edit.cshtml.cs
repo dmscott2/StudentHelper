@@ -30,7 +30,7 @@ namespace StudentHelper.Pages.Courses
             }
 
             Course = await _context.Courses
-                .Include(a => a.CourseName).FirstOrDefaultAsync(m => m.CourseId == id);
+                .Include(a => a.CourseName).FirstOrDefaultAsync(m => m.CourseID == id);
 
             if (Course == null)
             {
@@ -58,7 +58,7 @@ namespace StudentHelper.Pages.Courses
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CourseExists(Course.CourseId))
+                if (!CourseExists(Course.CourseID))
                 {
                     return NotFound();
                 }
@@ -73,7 +73,7 @@ namespace StudentHelper.Pages.Courses
 
         private bool CourseExists(int id)
         {
-            return _context.Courses.Any(e => e.CourseId == id);
+            return _context.Courses.Any(e => e.CourseID == id);
         }
     }
 }

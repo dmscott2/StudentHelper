@@ -28,7 +28,7 @@ namespace StudentHelper.Pages.Courses
             }
 
             Course = await _context.Courses
-                .Include(a => a.CourseName).FirstOrDefaultAsync(m => m.CourseId == id);
+                .Include(a => a.CourseName).FirstOrDefaultAsync(m => m.CourseID == id);
                
             if (Course == null)
             {
