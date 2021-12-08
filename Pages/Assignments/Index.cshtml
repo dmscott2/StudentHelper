@@ -1,0 +1,61 @@
+@page
+@model StudentHelper.Pages.Assignments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Assignment[0].AssignmentDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assignment[0].AssignmentDueDate)
+            </th>
+            <th>
+                DaysRemaining
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assignment[0].Student)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assignment[0].Course)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Assignment) {
+    var timeLeftIndays = item.AssignmentDueDate.Day - DateTime.Now.Day;
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignmentDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignmentDueDate)
+            </td>
+            <td>
+                @timeLeftIndays
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.StudentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.CourseName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.AssignmentId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.AssignmentId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.AssignmentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
