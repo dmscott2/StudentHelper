@@ -24,6 +24,11 @@ namespace StudentHelper.Models
                         StudentLastName = "Betts",
                         StudentEmail = "mookie.betts@test.com",
                         RegistrationDate = DateTime.Parse("2021-12-5"),
+                        Assignments = new List<Assignment> {
+                            new Assignment { AssignmentDesc = "Homework1", AssignmentDueDate = DateTime.Parse("2021-12-31")},
+                            new Assignment { AssignmentDesc = "Homework2", AssignmentDueDate = DateTime.Parse("2021-12-25")},
+                            new Assignment { AssignmentDesc = "GroupProject1", AssignmentDueDate = DateTime.Parse("2022-01-18")},
+                        }
                     },
 
                     new Student
@@ -32,6 +37,11 @@ namespace StudentHelper.Models
                         StudentLastName = "Seager",
                         StudentEmail = "corey.seager@test.com",
                         RegistrationDate = DateTime.Parse("2021-12-5"),
+                        Assignments = new List<Assignment> {
+                            new Assignment { AssignmentDesc = "Homework3", AssignmentDueDate = DateTime.Parse("2021-12-31")},
+                            new Assignment { AssignmentDesc = "Homework5", AssignmentDueDate = DateTime.Parse("2021-12-25")},
+                            new Assignment { AssignmentDesc = "Test1", AssignmentDueDate = DateTime.Parse("2022-01-18")},
+                        }
                     },
 
                     new Student
@@ -40,6 +50,11 @@ namespace StudentHelper.Models
                         StudentLastName = "Kershaw",
                         StudentEmail = "clayton.kershaw@test.com",
                         RegistrationDate = DateTime.Parse("2021-12-5"),
+                        Assignments = new List<Assignment> {
+                            new Assignment { AssignmentDesc = "Project1", AssignmentDueDate = DateTime.Parse("2021-12-31")},
+                            new Assignment { AssignmentDesc = "Quiz2", AssignmentDueDate = DateTime.Parse("2021-12-25")},
+                            new Assignment { AssignmentDesc = "DiscussionPost1", AssignmentDueDate = DateTime.Parse("2022-01-18")},
+                        }
                     },
 
                     new Student
