@@ -14,8 +14,6 @@ namespace StudentHelper.Models
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string CourseName { get; set; }
-        //public int StudentId { get; set; }
-        //public Student Student { get; set; }
         public List<Assignment> Assignments { get; set; } // Navigation property to Assignments
     }
 }
