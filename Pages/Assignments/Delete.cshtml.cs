@@ -28,9 +28,7 @@ namespace StudentHelper.Pages.Assignments
                 return NotFound();
             }
 
-            Assignment = await _context.Assignments
-                .Include(a => a.Course)
-                .Include(a => a.Student).FirstOrDefaultAsync(m => m.AssignmentId == id);
+            Assignment = await _context.Assignments.FirstOrDefaultAsync(m => m.AssignmentID == id);
 
             if (Assignment == null)
             {
@@ -58,3 +56,4 @@ namespace StudentHelper.Pages.Assignments
         }
     }
 }
+

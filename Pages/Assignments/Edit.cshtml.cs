@@ -29,16 +29,12 @@ namespace StudentHelper.Pages.Assignments
                 return NotFound();
             }
 
-            Assignment = await _context.Assignments
-                .Include(a => a.Course)
-                .Include(a => a.Student).FirstOrDefaultAsync(m => m.AssignmentId == id);
+            Assignment = await _context.Assignments.FirstOrDefaultAsync(m => m.AssignmentID == id);
 
             if (Assignment == null)
             {
                 return NotFound();
             }
-           ViewData["CourseId"] = new SelectList(_context.Courses, "CourseID", "CourseName");
-           ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId");
             return Page();
         }
 
@@ -59,7 +55,7 @@ namespace StudentHelper.Pages.Assignments
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AssignmentExists(Assignment.AssignmentId))
+                if (!AssignmentExists(Assignment.AssignmentID))
                 {
                     return NotFound();
                 }
@@ -74,7 +70,7 @@ namespace StudentHelper.Pages.Assignments
 
         private bool AssignmentExists(int id)
         {
-            return _context.Assignments.Any(e => e.AssignmentId == id);
+            return _context.Assignments.Any(e => e.AssignmentID == id);
         }
     }
 }
