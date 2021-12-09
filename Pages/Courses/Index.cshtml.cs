@@ -20,12 +20,27 @@ namespace StudentHelper.Pages.Courses
 
         public IList<Course> Course { get;set; }
         
+        [BindProperty(SupportsGet =true)]
         public int PageNum {get; set;} = 1;
         public int PageSize {get; set;} = 10;
+                                
+        [BindProperty(SupportsGet =true)]
+        public string CurrentSort {get; set; }
 
-        public IActionResult OnGet(){
-            Course = _context.Courses.Skip((PageNum-1)*PageSize).Take(PageSize).ToList();
-            return Page();
+        public async Task OnGetAsync()
+        {
+            var query = _context.Courses.Select(s => s);
+
+            switch (CurrentSort)
+            {
+                case "first_asc":
+                    query = query.OrderBy(s => s.CourseName);
+                    break;
+                case "first_desc":
+                    query = query.OrderByDescending(s => s.CourseName);
+                    break;
+            }
+            Course = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
         }
     }
 }

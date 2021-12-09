@@ -24,9 +24,23 @@ namespace StudentHelper.Pages.StudentAssignments
         public int PageNum {get; set;} = 1;
         public int PageSize {get; set;} = 10;
 
+        [BindProperty(SupportsGet =true)]
+        public string CurrentSort {get; set; }
+
         public async Task OnGetAsync()
         {
-            StudentAssignment = await _context.StudentAssignments.Include(s => s.Assignment).Include(s => s.Course).Include(s => s.Student).Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
+            var query = _context.StudentAssignments.Select(s => s);
+
+            switch (CurrentSort)
+            {
+                case "first_asc":
+                    query = query.OrderBy(s => s.StudentID);
+                    break;
+                case "first_desc":
+                    query = query.OrderByDescending(s => s.StudentID);
+                    break;
+            }
+            StudentAssignment = await query.Include(s => s.Assignment).Include(s => s.Course).Include(s => s.Student).Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
         }
     }
 }

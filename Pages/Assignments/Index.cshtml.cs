@@ -20,12 +20,27 @@ namespace StudentHelper.Pages.Assignments
 
         public IList<Assignment> Assignment { get;set; }
 
+        [BindProperty(SupportsGet =true)]
         public int PageNum {get; set;} = 1;
         public int PageSize {get; set;} = 10;
 
+        [BindProperty(SupportsGet =true)]
+        public string CurrentSort {get; set; }
+
         public async Task OnGetAsync()
         {
-            Assignment = await _context.Assignments.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
+            var query = _context.Assignments.Select(s => s);
+
+            switch (CurrentSort)
+            {
+                case "first_asc":
+                    query = query.OrderBy(s => s.AssignmentDesc);
+                    break;
+                case "first_desc":
+                    query = query.OrderByDescending(s => s.AssignmentDesc);
+                    break;
+            }
+            Assignment = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
         }
     }
 }

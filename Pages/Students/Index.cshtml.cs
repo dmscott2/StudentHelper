@@ -19,12 +19,28 @@ namespace StudentHelper.Pages.Students
         }
 
         public IList<Student> Student { get;set; }
+        
+        [BindProperty(SupportsGet =true)]
         public int PageNum {get; set;} = 1;
         public int PageSize {get; set;} = 10;
+        
+        [BindProperty(SupportsGet =true)]
+        public string CurrentSort {get; set; }
 
         public async Task OnGetAsync()
-        {
-            Student = await _context.Students.Include(a => a.Assignments).Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
+                {
+            var query = _context.Students.Select(s => s);
+
+            switch (CurrentSort)
+            {
+                case "first_asc":
+                    query = query.OrderBy(s => s.StudentLastName);
+                    break;
+                case "first_desc":
+                    query = query.OrderByDescending(s => s.StudentLastName);
+                    break;
+            }
+            Student = await query.Include(a => a.Assignments).Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
 
         }
     }
