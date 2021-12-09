@@ -13,6 +13,14 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+             <div class="form-group">
+                <label  class="control-label">Course</label>
+                @Html.DropDownList("Course",(IEnumerable<SelectListItem>)ViewData["CourseID"],"Select Course")
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Student</label>
+                @Html.DropDownList("Course",(IEnumerable<SelectListItem>)ViewData["StudentID"],"Select Student")
+            </div>
             <div class="form-group">
                 <label asp-for="Assignment.AssignmentDesc" class="control-label"></label>
                 <input asp-for="Assignment.AssignmentDesc" class="form-control" />

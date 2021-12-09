@@ -28,7 +28,7 @@ namespace StudentHelper.Pages.Students
             }
 
             Student = await _context.Students
-                .Include(a => a.StudentEmail).FirstOrDefaultAsync(m => m.StudentId == id);
+                .Include(a => a.StudentEmail).FirstOrDefaultAsync(m => m.StudentID == id);
 
             if (Student == null)
             {

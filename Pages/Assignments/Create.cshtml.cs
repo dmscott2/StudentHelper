@@ -20,8 +20,8 @@ namespace StudentHelper.Pages.Assignments
 
         public IActionResult OnGet()
         {
-        ViewData["CourseId"] = new SelectList(_context.Courses, "CourseID", "CourseName");
-        ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId");
+        ViewData["CourseID"] = new SelectList(_context.Courses, "CourseID", "CourseName");
+        ViewData["StudentID"] = new SelectList(_context.Students, "StudentID", "StudentEmail");
             return Page();
         }
 

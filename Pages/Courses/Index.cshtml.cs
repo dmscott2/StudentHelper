@@ -18,6 +18,10 @@ namespace StudentHelper.Pages.Courses
             _context = context;
         }
 
+        public IActionResult OnGet(){
+            Course = _context.Courses.ToList();
+            return Page();
+        }
         public IList<Course> Course { get;set; }
 
     }

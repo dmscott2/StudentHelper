@@ -9,14 +9,14 @@ using StudentHelper.Models;
 namespace StudentHelper.Migrations
 {
     [DbContext(typeof(StudentHelperDbContext))]
-    [Migration("20211208013118_InitialCreateUpdate")]
-    partial class InitialCreateUpdate
+    [Migration("20211208203327_Updated5")]
+    partial class Updated5
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.21");
+                .HasAnnotation("ProductVersion", "5.0.2");
 
             modelBuilder.Entity("StudentHelper.Models.Assignment", b =>
                 {
@@ -26,8 +26,8 @@ namespace StudentHelper.Migrations
 
                     b.Property<string>("AssignmentDesc")
                         .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(60);
+                        .HasMaxLength(60)
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("AssignmentDueDate")
                         .HasColumnType("TEXT");
@@ -55,8 +55,8 @@ namespace StudentHelper.Migrations
 
                     b.Property<string>("CourseName")
                         .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(60);
+                        .HasMaxLength(60)
+                        .HasColumnType("TEXT");
 
                     b.HasKey("CourseID");
 
@@ -99,6 +99,20 @@ namespace StudentHelper.Migrations
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("StudentHelper.Models.Course", b =>
+                {
+                    b.Navigation("Assignments");
+                });
+
+            modelBuilder.Entity("StudentHelper.Models.Student", b =>
+                {
+                    b.Navigation("Assignments");
                 });
 #pragma warning restore 612, 618
         }

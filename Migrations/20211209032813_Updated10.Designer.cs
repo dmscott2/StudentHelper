@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentHelper.Models;
 
 namespace StudentHelper.Migrations
 {
     [DbContext(typeof(StudentHelperDbContext))]
-    partial class StudentHelperDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211209032813_Updated10")]
+    partial class Updated10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

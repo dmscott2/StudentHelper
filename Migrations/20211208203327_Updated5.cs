@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace StudentHelper.Migrations
 {
-    public partial class InitialCreateUpdate : Migration
+    public partial class Updated5 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,9 +11,9 @@ namespace StudentHelper.Migrations
                 name: "Courses",
                 columns: table => new
                 {
-                    CourseID = table.Column<int>(nullable: false)
+                    CourseID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    CourseName = table.Column<string>(maxLength: 60, nullable: false)
+                    CourseName = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -24,12 +24,12 @@ namespace StudentHelper.Migrations
                 name: "Students",
                 columns: table => new
                 {
-                    StudentId = table.Column<int>(nullable: false)
+                    StudentId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    StudentFirstName = table.Column<string>(nullable: true),
-                    StudentLastName = table.Column<string>(nullable: true),
-                    StudentEmail = table.Column<string>(nullable: true),
-                    RegistrationDate = table.Column<DateTime>(nullable: false)
+                    StudentFirstName = table.Column<string>(type: "TEXT", nullable: true),
+                    StudentLastName = table.Column<string>(type: "TEXT", nullable: true),
+                    StudentEmail = table.Column<string>(type: "TEXT", nullable: true),
+                    RegistrationDate = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,12 +40,12 @@ namespace StudentHelper.Migrations
                 name: "Assignments",
                 columns: table => new
                 {
-                    AssignmentId = table.Column<int>(nullable: false)
+                    AssignmentId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    AssignmentDesc = table.Column<string>(maxLength: 60, nullable: false),
-                    AssignmentDueDate = table.Column<DateTime>(nullable: false),
-                    StudentId = table.Column<int>(nullable: false),
-                    CourseId = table.Column<int>(nullable: false)
+                    AssignmentDesc = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false),
+                    AssignmentDueDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    StudentId = table.Column<int>(type: "INTEGER", nullable: false),
+                    CourseId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

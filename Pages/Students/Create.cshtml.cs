@@ -20,8 +20,9 @@ namespace StudentHelper.Pages.Students
 
         public IActionResult OnGet()
         {
-        
-        ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId");
+            Student = new Student();
+            Student.RegistrationDate  = DateTime.Now;
+        ViewData["StudentID"] = new SelectList(_context.Students, "StudentID", "StudentEmail");
             return Page();
         }
 

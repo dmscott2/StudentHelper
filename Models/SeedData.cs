@@ -30,7 +30,7 @@ namespace StudentHelper.Models
                     new Course {CourseName = "Government"},
                     new Course {CourseName = "Statistics"},
                     };
-                context.AddRange(Courses);
+                context.Courses.AddRange(Courses);
 
                 List<Student> Students = new List<Student> {
                     new Student {StudentFirstName="Mookie", StudentLastName="Betts", StudentEmail="mookie.betts@test.com", RegistrationDate = DateTime.Parse("2021-12-5")},
@@ -59,7 +59,7 @@ namespace StudentHelper.Models
                     new Student {StudentFirstName="Hilary", StudentLastName="Anderson", StudentEmail="hilary.anderson@test.com", RegistrationDate = DateTime.Parse("2021-12-5")},
                     new Student {StudentFirstName="Belinda", StudentLastName="Reese", StudentEmail="belinda.reese@test.com", RegistrationDate = DateTime.Parse("2021-12-5")},
                 };
-                context.AddRange(Students);
+                context.Students.AddRange(Students);
 
                 List<StudentCourse> enrollment = new List<StudentCourse> {
                     new StudentCourse {CourseID = 1, StudentID = 1},
@@ -88,7 +88,7 @@ namespace StudentHelper.Models
                     new StudentCourse {CourseID = 6, StudentID = 24},
                     new StudentCourse {CourseID = 5, StudentID = 25},
                 };
-                context.AddRange(enrollment);
+                context.StudentCourses.AddRange(enrollment);
 
                     List<Assignment> Assignments = new List<Assignment> {
                     new Assignment {AssignmentDesc = "Homework1", AssignmentDueDate=DateTime.Parse("2021-12-30")},
@@ -102,7 +102,7 @@ namespace StudentHelper.Models
                     new Assignment {AssignmentDesc = "Quiz1", AssignmentDueDate=DateTime.Parse("2021-12-30")},
                     new Assignment {AssignmentDesc = "Quiz1", AssignmentDueDate=DateTime.Parse("2021-12-30")},
                 };
-                context.AddRange(Assignments);
+                context.Assignments.AddRange(Assignments);
 
                     List<StudentAssignment> courseassignments = new List<StudentAssignment> {
                     new StudentAssignment {CourseID = 1, StudentID = 1, AssignmentID = 1},
@@ -131,7 +131,7 @@ namespace StudentHelper.Models
                     new StudentAssignment {CourseID = 6, StudentID = 24, AssignmentID = 4},
                     new StudentAssignment {CourseID = 5, StudentID = 25, AssignmentID = 5},
                 };
-                context.AddRange(courseassignments);
+                context.StudentAssignments.AddRange(courseassignments);
                 
                 context.SaveChanges();
     
