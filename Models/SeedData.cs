@@ -31,7 +31,7 @@ namespace StudentHelper.Models
                     new Course {CourseName = "Statistics"},
                     };
                 context.Courses.AddRange(Courses);
-
+                context.SaveChanges();
                 List<Student> Students = new List<Student> {
                     new Student {StudentFirstName="Mookie", StudentLastName="Betts", StudentEmail="mookie.betts@test.com", RegistrationDate = DateTime.Parse("2021-12-5")},
                     new Student {StudentFirstName="Corey", StudentLastName="Seager", StudentEmail="corey.seager@test.com", RegistrationDate = DateTime.Parse("2021-12-5")},
@@ -60,7 +60,7 @@ namespace StudentHelper.Models
                     new Student {StudentFirstName="Belinda", StudentLastName="Reese", StudentEmail="belinda.reese@test.com", RegistrationDate = DateTime.Parse("2021-12-5")},
                 };
                 context.Students.AddRange(Students);
-
+                context.SaveChanges();
                 List<StudentCourse> enrollment = new List<StudentCourse> {
                     new StudentCourse {CourseID = 1, StudentID = 1},
                     new StudentCourse {CourseID = 2, StudentID = 2},
@@ -89,8 +89,8 @@ namespace StudentHelper.Models
                     new StudentCourse {CourseID = 5, StudentID = 25},
                 };
                 context.StudentCourses.AddRange(enrollment);
-
-                    List<Assignment> Assignments = new List<Assignment> {
+                context.SaveChanges();
+                List<Assignment> Assignments = new List<Assignment> {
                     new Assignment {AssignmentDesc = "Homework1", AssignmentDueDate=DateTime.Parse("2021-12-30")},
                     new Assignment {AssignmentDesc = "Homework2", AssignmentDueDate=DateTime.Parse("2021-12-30")},
                     new Assignment {AssignmentDesc = "Homework3", AssignmentDueDate=DateTime.Parse("2021-12-30")},
@@ -103,8 +103,8 @@ namespace StudentHelper.Models
                     new Assignment {AssignmentDesc = "Quiz1", AssignmentDueDate=DateTime.Parse("2021-12-30")},
                 };
                 context.Assignments.AddRange(Assignments);
-
-                    List<StudentAssignment> courseassignments = new List<StudentAssignment> {
+                context.SaveChanges();
+                List<StudentAssignment> courseassignments = new List<StudentAssignment> {
                     new StudentAssignment {CourseID = 1, StudentID = 1, AssignmentID = 1},
                     new StudentAssignment {CourseID = 2, StudentID = 2, AssignmentID = 2},
                     new StudentAssignment {CourseID = 3, StudentID = 3, AssignmentID = 3},
@@ -132,7 +132,6 @@ namespace StudentHelper.Models
                     new StudentAssignment {CourseID = 5, StudentID = 25, AssignmentID = 5},
                 };
                 context.StudentAssignments.AddRange(courseassignments);
-                
                 context.SaveChanges();
     
                 }
