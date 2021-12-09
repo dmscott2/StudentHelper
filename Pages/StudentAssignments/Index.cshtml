@@ -14,9 +14,8 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.StudentAssignment[0].Course)
+                @Html.DisplayNameFor(model => model.StudentAssignment[0].CourseName)
             </th>
-            <th>Days Left to Complete</th>
             <th>
                             <th>
                 @{
@@ -29,8 +28,9 @@
                 }
                 <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.StudentAssignment[0].StudentID)</a>
             <th>
-                @Html.DisplayNameFor(model => model.StudentAssignment[0].Assignment)
+                @Html.DisplayNameFor(model => model.StudentAssignment[0].AssignmentDesc)
             </th>
+            <th>Days Left to Complete</th>
             <th></th>
         </tr>
     </thead>
@@ -42,7 +42,7 @@
                 @Html.DisplayFor(modelItem => item.Course.CourseName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Student.StudentEmail)
+                @Html.DisplayFor(modelItem => item.Student.StudentID)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Assignment.AssignmentDesc)
