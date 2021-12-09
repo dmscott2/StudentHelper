@@ -9,7 +9,7 @@ namespace StudentHelper.Models
 {
     public class Assignment
     {
-        public int AssignmentId { get; set; } // primary key
+        public int AssignmentID { get; set; } // primary key
 
         [StringLength(60, MinimumLength = 3)]
         [Required]
@@ -19,9 +19,16 @@ namespace StudentHelper.Models
         [DataType(DataType.Date)]
         [Required]
         public DateTime AssignmentDueDate { get; set; }
-        public int StudentId { get; set; }
-        public Student Student { get; set; }
-        public int CourseId { get; set; }
-        public Course Course { get; set; }
+        public List <StudentAssignment> StudentAssignments {get; set;} 
+    }
+
+        public class StudentAssignment
+    {
+        public int CourseID {get; set;}
+        public int StudentID {get; set;}    // Composite Primary Key, Foreign Key 1
+        public int AssignmentID {get; set;} // Composite Primary Key, Foreign Key 2
+        public Course Course {get; set;}
+        public Student Student {get; set;}  // Navigation Property. 
+        public Assignment Assignment {get; set;} // Navigation Property. Multiple Assignments per
     }
 }
