@@ -17,19 +17,15 @@
                 @Html.DisplayNameFor(model => model.Course[0].CourseID)
             </th>
             <th>
-                            <th>
                 @{
                     var firstSort = "first_asc";
                     if (Model.CurrentSort == "first_asc")
                     {
                         firstSort = "first_desc";
                     }
-
                 }
                 <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.Course[0].CourseName)</a>
             </th>
-            <th>
-            <th></th>
         </tr>
     </thead>
     <tbody>

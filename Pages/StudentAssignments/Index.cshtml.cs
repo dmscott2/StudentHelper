@@ -29,18 +29,18 @@ namespace StudentHelper.Pages.StudentAssignments
 
         public async Task OnGetAsync()
         {
-            var query = _context.StudentAssignments.Select(s => s);
+            var query = _context.StudentAssignments.Select(p => p);
 
             switch (CurrentSort)
             {
                 case "first_asc":
-                    query = query.OrderBy(s => s.StudentID);
+                    query = query.OrderBy(p => p.StudentID);
                     break;
                 case "first_desc":
-                    query = query.OrderByDescending(s => s.StudentID);
+                    query = query.OrderByDescending(p => p.StudentID);
                     break;
             }
-            StudentAssignment = await query.Include(s => s.Assignment).Include(s => s.Course).Include(s => s.Student).Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
+            StudentAssignment = await query.Include(p => p.Assignment).Include(p => p.Course).Include(p => p.Student).Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
         }
     }
 }
