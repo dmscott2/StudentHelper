@@ -16,9 +16,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.StudentAssignment[0].Course)
             </th>
+            <th>Days Left to Complete</th>
             <th>
-                @Html.DisplayNameFor(model => model.StudentAssignment[0].Student)
-            </th>
+                            <th>
+                @{
+                    var firstSort = "first_asc";
+                    if (Model.CurrentSort == "first_asc")
+                    {
+                        firstSort = "first_desc";
+                    }
+
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.StudentAssignment[0].StudentID)</a>
             <th>
                 @Html.DisplayNameFor(model => model.StudentAssignment[0].Assignment)
             </th>
@@ -27,6 +36,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model.StudentAssignment) {
+    var timeLeftInDays = item.AssignmentDueDate.Day - DateTime.Now.Day; 
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Course.CourseName)
@@ -37,6 +47,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Assignment.AssignmentDesc)
             </td>
+            <td> @timeLeftInDays</td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |

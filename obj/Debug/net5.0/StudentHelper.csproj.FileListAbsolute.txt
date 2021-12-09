@@ -180,3 +180,8 @@ C:\Users\dawns\OneDrive\Desktop\StudentHelper_FinalUpdate\StudentHelper\obj\Debu
 C:\Users\dawns\OneDrive\Desktop\StudentHelper_FinalUpdate\StudentHelper\obj\Debug\net5.0\ref\StudentHelper.dll
 C:\Users\dawns\OneDrive\Desktop\StudentHelper_FinalUpdate\StudentHelper\obj\Debug\net5.0\StudentHelper.pdb
 C:\Users\dawns\OneDrive\Desktop\StudentHelper_FinalUpdate\StudentHelper\obj\Debug\net5.0\StudentHelper.genruntimeconfig.cache
+C:\Users\dawns\OneDrive\Desktop\StudentHelper_FinalUpdate\StudentHelper\obj\Debug\net5.0\Razor\Pages\StudentAssignments\Create.cshtml.g.cs
+C:\Users\dawns\OneDrive\Desktop\StudentHelper_FinalUpdate\StudentHelper\obj\Debug\net5.0\Razor\Pages\StudentAssignments\Delete.cshtml.g.cs
+C:\Users\dawns\OneDrive\Desktop\StudentHelper_FinalUpdate\StudentHelper\obj\Debug\net5.0\Razor\Pages\StudentAssignments\Details.cshtml.g.cs
+C:\Users\dawns\OneDrive\Desktop\StudentHelper_FinalUpdate\StudentHelper\obj\Debug\net5.0\Razor\Pages\StudentAssignments\Edit.cshtml.g.cs
+C:\Users\dawns\OneDrive\Desktop\StudentHelper_FinalUpdate\StudentHelper\obj\Debug\net5.0\Razor\Pages\StudentAssignments\Index.cshtml.g.cs

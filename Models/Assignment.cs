@@ -31,6 +31,7 @@ namespace StudentHelper.Models
         public string CourseName {get;set; }
         public Course Course {get; set;}
         public Student Student {get; set;}  // Navigation Property. 
+        public DateTime AssignmentDueDate { get; set; }
         public Assignment Assignment {get; set;} // Navigation Property. Multiple Assignments per
     }
 }

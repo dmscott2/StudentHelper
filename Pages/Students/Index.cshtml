@@ -17,7 +17,16 @@
                 @Html.DisplayNameFor(model => model.Student[0].StudentFirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Student[0].StudentLastName)
+                            <th>
+                @{
+                    var firstSort = "first_asc";
+                    if (Model.CurrentSort == "first_asc")
+                    {
+                        firstSort = "first_desc";
+                    }
+
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.Student[0].StudentLastName)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Student[0].StudentEmail)

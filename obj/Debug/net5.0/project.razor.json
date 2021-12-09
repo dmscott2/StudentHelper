@@ -15634,6 +15634,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\dawns\\OneDrive\\Desktop\\StudentHelper_FinalUpdate\\StudentHelper\\Pages\\StudentAssignments\\Index.cshtml",
+      "TargetPath": "Pages\\StudentAssignments\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\dawns\\OneDrive\\Desktop\\StudentHelper_FinalUpdate\\StudentHelper\\Pages\\_ViewImports.cshtml",
       "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -15664,6 +15669,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\dawns\\OneDrive\\Desktop\\StudentHelper_FinalUpdate\\StudentHelper\\Pages\\StudentAssignments\\Edit.cshtml",
+      "TargetPath": "Pages\\StudentAssignments\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\dawns\\OneDrive\\Desktop\\StudentHelper_FinalUpdate\\StudentHelper\\Pages\\StudentAssignments\\Delete.cshtml",
+      "TargetPath": "Pages\\StudentAssignments\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\dawns\\OneDrive\\Desktop\\StudentHelper_FinalUpdate\\StudentHelper\\Pages\\Courses\\Details.cshtml",
       "TargetPath": "Pages\\Courses\\Details.cshtml",
       "FileKind": "mvc"
@@ -15676,6 +15691,11 @@
     {
       "FilePath": "c:\\Users\\dawns\\OneDrive\\Desktop\\StudentHelper_FinalUpdate\\StudentHelper\\Pages\\Courses\\Delete.cshtml",
       "TargetPath": "Pages\\Courses\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\dawns\\OneDrive\\Desktop\\StudentHelper_FinalUpdate\\StudentHelper\\Pages\\StudentAssignments\\Create.cshtml",
+      "TargetPath": "Pages\\StudentAssignments\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15721,6 +15741,11 @@
     {
       "FilePath": "c:\\Users\\dawns\\OneDrive\\Desktop\\StudentHelper_FinalUpdate\\StudentHelper\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\dawns\\OneDrive\\Desktop\\StudentHelper_FinalUpdate\\StudentHelper\\Pages\\StudentAssignments\\Details.cshtml",
+      "TargetPath": "Pages\\StudentAssignments\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
