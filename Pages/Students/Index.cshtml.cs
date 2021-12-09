@@ -19,11 +19,13 @@ namespace StudentHelper.Pages.Students
         }
 
         public IList<Student> Student { get;set; }
+        public int PageNum {get; set;} = 1;
+        public int PageSize {get; set;} = 10;
 
         public async Task OnGetAsync()
         {
-            Student = await _context.Students
-                .Include(a => a.Assignments).ToListAsync();
+            Student = await _context.Students.Include(a => a.Assignments).Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
+
         }
     }
 }

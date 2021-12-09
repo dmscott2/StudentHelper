@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using StudentHelper.Models;
 
-namespace StudentHelper.Pages.Assignments
+namespace StudentHelper.Pages.StudentAssignments
 {
     public class IndexModel : PageModel
     {
@@ -18,14 +18,15 @@ namespace StudentHelper.Pages.Assignments
             _context = context;
         }
 
-        public IList<Assignment> Assignment { get;set; }
+        public IList<StudentAssignment> StudentAssignment { get;set; }
 
+        [BindProperty(SupportsGet =true)]
         public int PageNum {get; set;} = 1;
         public int PageSize {get; set;} = 10;
 
         public async Task OnGetAsync()
         {
-            Assignment = await _context.Assignments.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
+            StudentAssignment = await _context.StudentAssignments.Include(s => s.Assignment).Include(s => s.Course).Include(s => s.Student).Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
         }
     }
 }

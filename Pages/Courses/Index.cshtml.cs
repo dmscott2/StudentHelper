@@ -18,11 +18,14 @@ namespace StudentHelper.Pages.Courses
             _context = context;
         }
 
+        public IList<Course> Course { get;set; }
+        
+        public int PageNum {get; set;} = 1;
+        public int PageSize {get; set;} = 10;
+
         public IActionResult OnGet(){
-            Course = _context.Courses.ToList();
+            Course = _context.Courses.Skip((PageNum-1)*PageSize).Take(PageSize).ToList();
             return Page();
         }
-        public IList<Course> Course { get;set; }
-
     }
 }

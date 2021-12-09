@@ -17,9 +17,10 @@ namespace StudentHelper.Pages
             _logger = logger;
         }
 
+        
         public void OnGet()
         {
-
+        
         }
     }
 }
