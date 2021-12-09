@@ -1,0 +1,48 @@
+@page
+@model StudentHelper.Pages.StudentAssignments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentAssignment[0].Course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentAssignment[0].Student)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentAssignment[0].Assignment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.StudentAssignment) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.StudentEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Assignment.AssignmentDesc)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
